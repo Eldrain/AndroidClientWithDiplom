@@ -1,4 +1,4 @@
-package com.ndk_lesson.anovikov.teamtrackerclient;
+package com.anovikov.diplomclient;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,29 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ConnectFragment.OnConnectFragment} interface
+ * {@link MainMenuFragment.OnMainMenuListener} interface
  * to handle interaction events.
- * Use the {@link ConnectFragment#newInstance} factory method to
+ * Use the {@link MainMenuFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ConnectFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+public class MainMenuFragment extends Fragment {
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private OnMainMenuListener mListener;
 
-    private OnConnectFragment mListener;
-
-    public ConnectFragment() {
+    public MainMenuFragment() {
         // Required empty public constructor
     }
 
@@ -40,14 +32,14 @@ public class ConnectFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ConnectFragment.
+     * @return A new instance of fragment MainMenuFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ConnectFragment newInstance(String param1, String param2) {
-        ConnectFragment fragment = new ConnectFragment();
+    public static MainMenuFragment newInstance(String param1, String param2) {
+        MainMenuFragment fragment = new MainMenuFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        //args.putString(ARG_PARAM1, param1);
+        //args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,33 +48,46 @@ public class ConnectFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            //mParam1 = getArguments().getString(ARG_PARAM1);
+            //mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        final View fragment = inflater.inflate(R.layout.fragment_connect, container, false);
+        View fragment = inflater.inflate(R.layout.fragment_main_menu, container, false);
 
-        Button btnConnect = fragment.findViewById(R.id.button_connect);
-        btnConnect.setOnClickListener(new View.OnClickListener() {
+        Button btnSolve = (Button) fragment.findViewById(R.id.menu_button_solve);
+        btnSolve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //fragment.findViewById()
-                mListener.connect("LoginBott");
+                mListener.solve();
             }
         });
+        //TextView textCoords = fragment.findViewById(R.id.text_coords);
+        //textCoords.setText("Main menu is started!");
         return fragment;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mListener.bindViews();
+    }
+
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            //mListener.onFragmentInteraction(uri);
+        }
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnConnectFragment) {
-            mListener = (OnConnectFragment) context;
+        if (context instanceof OnMainMenuListener) {
+            mListener = (OnMainMenuListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -92,6 +97,7 @@ public class ConnectFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+        mListener.unbindViews();
         mListener = null;
     }
 
@@ -102,11 +108,13 @@ public class ConnectFragment extends Fragment {
      * activity.
      * <p>
      * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragmen2ts/communicating.html"
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnConnectFragment {
+    public interface OnMainMenuListener {
+        void bindViews();
+        void unbindViews();
 
-        void connect(String login);
+        void solve();
     }
 }

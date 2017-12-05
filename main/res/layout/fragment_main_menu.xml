@@ -3,20 +3,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ndk_lesson.anovikov.teamtrackerclient.MainMenuFragment">
+    tools:context="com.anovikov.diplomclient.MainMenuFragment">
 
     <TextView
-        android:id="@+id/text_coords"
-        android:layout_width="239dp"
-        android:layout_height="94dp"
+        android:id="@+id/text_name"
+        android:layout_width="237dp"
+        android:layout_height="25dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="159dp"
+        android:layout_marginTop="59dp"
         android:text="@string/hello_blank_fragment"
         android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="137dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_count_pr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/menu_text_count_pr"
+        app:layout_constraintLeft_toLeftOf="@+id/text_count_j"
+        app:layout_constraintTop_toBottomOf="@+id/text_count_j" />
+
+    <TextView
+        android:id="@+id/text_count_j"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="63dp"
+        android:text="@string/menu_text_count_j"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_name" />
+
+    <EditText
+        android:id="@+id/edit_count_j"
+        android:layout_width="51dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="-27dp"
+        android:layout_marginLeft="80dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="10"
+        app:layout_constraintBottom_toBottomOf="@+id/text_count_j"
+        app:layout_constraintLeft_toRightOf="@+id/text_count_j" />
+
+    <EditText
+        android:id="@+id/edit_count_pr"
+        android:layout_width="51dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="10"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/edit_count_j"
+        app:layout_constraintBottom_toBottomOf="@+id/text_count_pr"
+        android:layout_marginBottom="-55dp" />
+
+    <Button
+        android:id="@+id/menu_button_solve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="122dp"
+        android:text="@string/text_solve"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_count_pr" />
 
 </android.support.constraint.ConstraintLayout>

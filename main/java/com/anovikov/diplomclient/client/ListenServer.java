@@ -1,4 +1,4 @@
-package com.ndk_lesson.anovikov.teamtrackerclient.client;
+package com.anovikov.diplomclient.client;
 
 import android.os.Bundle;
 import android.os.IBinder;
@@ -6,16 +6,14 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.ndk_lesson.anovikov.teamtrackerclient.MainActivity;
-import com.ndk_lesson.anovikov.teamtrackerclient.ServerCommunication;
+import com.anovikov.diplomclient.MainActivity;
+import com.anovikov.diplomclient.ServerCommunication;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 
 

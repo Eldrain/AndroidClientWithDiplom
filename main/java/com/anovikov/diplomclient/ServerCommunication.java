@@ -1,13 +1,12 @@
-package com.ndk_lesson.anovikov.teamtrackerclient;
+package com.anovikov.diplomclient;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Messenger;
-import android.support.annotation.IntDef;
 import android.util.Log;
 
-import com.ndk_lesson.anovikov.teamtrackerclient.client.ListenServer;
+import com.anovikov.diplomclient.client.ListenServer;
 
 public class ServerCommunication extends Service {
     public final static String X = "x";

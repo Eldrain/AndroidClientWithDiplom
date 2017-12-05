@@ -10,4 +10,12 @@
     <string name="edit_name">Enter your login</string>
     <string name="text_adderss">Address:</string>
     <string name="edit_adderss">Enter address</string>
+    <string name="menu_text_count_j">Enter count jobs:</string>
+    <string name="menu_text_count_pr">Enter count proccessors:</string>
+    <string name="text_solve">Solve</string>
+    <string name="text_wait">Task is solving. Please, wait...</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_result">Results</string>
+    <string name="text_newtask">New task</string>
+    <string name="text_exit">Exit</string>
 </resources>

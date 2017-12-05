@@ -1,4 +1,4 @@
-package com.ndk_lesson.anovikov.teamtrackerclient.client;
+package com.anovikov.diplomclient.client;
 
 public class Coordinate {
 	public double mX;	

@@ -1,4 +1,4 @@
-package com.ndk_lesson.anovikov.teamtrackerclient;
+package com.anovikov.diplomclient;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
